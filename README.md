@@ -8,3 +8,9 @@
 1. cli folder for azure cli command (/cli)
    - No Version Control (Local Only)
    - To make resource group, tf state storage 
+1. Terraform Secret How2
+    - Secret Info must use running variable input
+```
+    terraform apply -var "secret=something" 
+```
+
