@@ -10,8 +10,8 @@ resource "azurerm_postgresql_server" "pstgrsvr_dev_lunch2_aztech_kc" {
   geo_redundant_backup_enabled = false
   auto_grow_enabled            = true
 
-  administrator_login          = ${{ secrets.PSQL_LOGIN }}
-  administrator_login_password = ${{ secrets.PSQL_PWD }}
+  administrator_login          = var.psql_login
+  administrator_login_password = var.psql_pwd
   version                      = "9.5"
   ssl_enforcement_enabled      = true
 }
