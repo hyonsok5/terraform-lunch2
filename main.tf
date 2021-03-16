@@ -19,7 +19,7 @@ terraform {
   //   storage_account_name  = "stortfstatelunch2"
   //   container_name        = "cntrtfstatelunch2"
   // }  
-
+  
  
 }         
     
