@@ -33,3 +33,4 @@ terraform
 terraform.exe
 
 .terraform*
+secrets.txt
