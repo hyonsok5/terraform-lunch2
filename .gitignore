@@ -29,4 +29,7 @@ override.tf.json
 # example: *tfplan*
 
 **/cli/*
+terraform
+terraform.exe
 
+.terraform*
