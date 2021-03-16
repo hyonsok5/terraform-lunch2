@@ -60,7 +60,7 @@ jobs:
     defaults:   
       run:   
         #shell: bash 
-        shell: az login --username ${{ env.AZ_USER }} --password ${{ secrets.AZ_PWD }} --tenant ${{ secrets.AZ_TENANT }}
+        shell: az login --username ${{ env.AZ_USER }} --password ${{ env.AZ_PWD }} --tenant ${{ env.AZ_TENANT }}
    
     steps:
     # Checkout the repository to the GitHub Actions runner
