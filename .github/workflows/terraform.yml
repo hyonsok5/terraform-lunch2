@@ -59,9 +59,9 @@ jobs:
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults: 
       run:   
-        #shell: bash
-        shell: az login --username "${{ secrets.AZ_USER }}" --password "${{ secrets.AZ_PWD }}" --tenant "${{ secrets.AZ_TENANT }}"
-  
+        #shell: bash 
+        shell: az login --username ${{ secrets.AZ_USER }} --password ${{ secrets.AZ_PWD }} --tenant ${{ secrets.AZ_TENANT }}
+   
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
