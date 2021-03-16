@@ -75,10 +75,6 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init
-      env:
-        PSQL_LOGIN: ${{ secrets.PSQL_LOGIN }}
-        PSQL_PWD: ${{ secrets.PSQL_PWD }}
-        STRG_CNTR_KEY: ${{ secrets.STRG_CNTR_KEY }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format

@@ -6,8 +6,7 @@ terraform {
     resource_group_name = "rg-dev-lunch2-aztech-kc"
     storage_account_name  = "stortfstatelunch2"
     container_name        = "cntrtfstatelunch2"
-    key                   = ${{ secrets.STRG_CNTR_KEY }} 
-    # var.strg_cntr_key
+    key                   = ${{ var.strg_cntr_key }} 
   }  
 
 }         
