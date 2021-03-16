@@ -60,8 +60,7 @@ jobs:
     defaults:   
       run:   
         shell: bash 
-        # shell: az login --username ${{ env.AZ_USER }} --password ${{ env.AZ_PWD }} --tenant ${{ env.AZ_TENANT }}
-   
+        
     steps:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
@@ -76,6 +75,11 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init   
       run: terraform init -backend-config="key=${{secrets.STRG_CNTR_KEY}}"
+      env: 
+        TF_VAR_agent_client_id: ${{ secrets.TF_VAR_AGENT_CLIENT_ID }}
+        TF_VAR_agent_client_secret: ${{secrets.TF_VAR_AGENT_CLIENT_SECRET }}
+        TF_VAR_subscription_id: ${{ secrets.TF_VAR_SUBSCRIPTION_ID }}
+        TF_VAR_tenant_id: ${{ secrets.TF_VAR_TENANT_ID }}
     
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
