@@ -59,7 +59,7 @@ jobs:
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:   
       run:   
-        #shell: bash 
+        shell: bash 
         shell: az login --username ${{ env.AZ_USER }} --password ${{ env.AZ_PWD }} --tenant ${{ env.AZ_TENANT }}
    
     steps:
@@ -72,7 +72,7 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
+  
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       run: terraform init -backend-config="key=${{secrets.STRG_CNTR_KEY}}"
