@@ -11,7 +11,7 @@ resource "azurerm_key_vault" "kv_dev_lunch2_aztech_kc" {
 
   access_policy {
     tenant_id = var.tenant_id
-    object_id = "455be9ba-a675-4e4f-801a-c0080f9aa6c1"
+    object_id = "455be9ba-a675-4e4f-801a-c0080f9aa6c1" // function app
 
     key_permissions = [
       "Get",
@@ -24,5 +24,22 @@ resource "azurerm_key_vault" "kv_dev_lunch2_aztech_kc" {
     storage_permissions = [
       "Get",
     ]
+  }
+
+  access_policy {
+      tenant_id = var.tenant_id
+      object_id = "de6716e9-0cfb-47e0-bd53-72e59099b3f3" // hyonsok
+
+      key_permissions = [
+        "Get","Create","List","Delete"
+        ]
+
+        secret_permissions = [
+       "Get","Create","List","Delete"
+        ]
+
+        storage_permissions = [
+       "Get","Create","List","Delete"
+        ]
   }
 }
