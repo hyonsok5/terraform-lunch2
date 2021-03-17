@@ -24,7 +24,7 @@ resource "azurerm_key_vault" "kv_dev_lunch2_aztech_kc" {
       object_id = "de6716e9-0cfb-47e0-bd53-72e59099b3f3" // hyonsok
      
         secret_permissions = [
-       "Get","Create","List","Delete"
+       "Set","Get","List","Delete"
         ]
 
   }
