@@ -26,7 +26,7 @@ resource "azurerm_kubernetes_cluster" "aks_dev_lunch2_aztech_kc" {
 
 resource "azurerm_public_ip" "pip_dev_aflunch2_aztech_kc" {
   name                = "pip-dev-aflunch2-aztech-kc"
-  resource_group_name      = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+  resource_group_name      = data.azurerm_resource_group.rg_dev_aks_aztech_kc.name
   location                 = var.location
   allocation_method   = "Static"
   sku = "Standard"
@@ -35,7 +35,7 @@ resource "azurerm_public_ip" "pip_dev_aflunch2_aztech_kc" {
 
 resource "azurerm_public_ip" "pip_dev_ablunch2_aztech_kc" {
   name                = "pip-dev-ablunch2-aztech-kc"
-  resource_group_name      = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+  resource_group_name      = data.azurerm_resource_group.rg_dev_aks_aztech_kc.name
   location                 = var.location  
   allocation_method   = "Static"  
   sku = "Standard"
