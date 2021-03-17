@@ -18,7 +18,7 @@ resource "azurerm_kubernetes_cluster" "aks_dev_lunch2_aztech_kc" {
     client_secret = var.client_secret
   }
 
-  role_based_access_control {
+  role_based_access_control {   
     enabled = true
   }
 
@@ -29,10 +29,8 @@ resource "azurerm_public_ip" "pip_dev_aflunch2_aztech_kc" {
   resource_group_name      = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
   location                 = var.location
   allocation_method   = "Static"
+  sku = "Standard"
 
-  tags = {
-    environment = "Production"
-  }
 }  
 
 resource "azurerm_public_ip" "pip_dev_ablunch2_aztech_kc" {
@@ -40,8 +38,6 @@ resource "azurerm_public_ip" "pip_dev_ablunch2_aztech_kc" {
   resource_group_name      = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
   location                 = var.location  
   allocation_method   = "Static"  
+  sku = "Standard"
 
-  tags = { 
-    environment = "Production"
-  }
 }
