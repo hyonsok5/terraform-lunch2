@@ -4,5 +4,5 @@ resource "azurerm_container_registry" "acr_dev_ablunch2_aztech_kc" {
   location                 = var.location
   sku                      = "Standard"
   admin_enabled            = false
-  georeplication_locations = ["Southeast Asia", "East Japan"]
+  # georeplication_locations = ["Southeast Asia", "East Japan"]
 }
