@@ -24,17 +24,24 @@ resource "azurerm_kubernetes_cluster" "aks_dev_lunch2_aztech_kc" {
 
 }
 
-
-resource "azurerm_public_ip" "pip_lb_dev_lunch2_aztech_kc_001" {
-  name                = "pip-lb-dev-lunch2-aztech-kc-001"
-  location            = var.location
-  resource_group_name = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+resource "azurerm_public_ip" "pip_dev_aflunch2_aztech_kc" {
+  name                = "pip-dev-aflunch2-aztech-kc"
+  resource_group_name      = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+  location                 = var.location
   allocation_method   = "Static"
-}
 
-resource "azurerm_public_ip" "pip_lb_dev_lunch2_aztech_kc_002" {
-  name                = "pip-lb-dev-lunch2-aztech-kc-002"
-  location            = var.location
-  resource_group_name = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+  tags = {
+    environment = "Production"
+  }
+}  
+
+resource "azurerm_public_ip" "pip_dev_ablunch2_aztech_kc" {
+  name                = "pip-dev-ablunch2-aztech-kc"
+  resource_group_name      = data.azurerm_resource_group.aks_lunch2gether_rg.name
+  location                 = var.location  
   allocation_method   = "Static"
+
+  tags = { 
+    environment = "Production"
+  }
 }
