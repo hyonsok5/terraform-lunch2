@@ -37,9 +37,9 @@ resource "azurerm_public_ip" "pip_dev_aflunch2_aztech_kc" {
 
 resource "azurerm_public_ip" "pip_dev_ablunch2_aztech_kc" {
   name                = "pip-dev-ablunch2-aztech-kc"
-  resource_group_name      = data.azurerm_resource_group.aks_lunch2gether_rg.name
+  resource_group_name      = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
   location                 = var.location  
-  allocation_method   = "Static"
+  allocation_method   = "Static"  
 
   tags = { 
     environment = "Production"
