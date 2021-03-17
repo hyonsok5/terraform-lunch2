@@ -12,7 +12,7 @@ resource "azurerm_postgresql_server" "pstgrsvr_dev_lunch2_aztech_kc" {
 
   administrator_login          = var.psql_login
   administrator_login_password = var.psql_pwd
-  version                      = "11.6"
+  version                      = "11"
   ssl_enforcement_enabled      = true
 }
 
