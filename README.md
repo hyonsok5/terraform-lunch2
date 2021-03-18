@@ -1,5 +1,8 @@
 
 ![InfraD](https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/infraD-lunch2-hackerthon.png)
+![lunch2](https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/lunch2.png)
+![admin](https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/admin-lunch2.png)
+![roulette](https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/roulette.png)
 
 # terraform-lunch2
 
