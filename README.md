@@ -1,3 +1,6 @@
+
+![InfraD](https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/infraD-lunch2-hackerthon.png)
+
 # terraform-lunch2
 
 1. Terraform Cloud used (https://app.terraform.io/)
