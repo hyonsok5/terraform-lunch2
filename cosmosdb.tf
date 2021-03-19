@@ -29,14 +29,14 @@ resource "azurerm_cosmosdb_sql_database" "cosmossql_dev_lunch2_aztech_kc" {
   throughput          = 400
 }
 
-# resource "azurerm_cosmosdb_sql_container" "example" {
-#   name                  = "cosmoscontainer-dev-lunch2-aztech-kc"
-#   resource_group_name   = azurerm_cosmosdb_account.example.resource_group_name
-#   account_name          = azurerm_cosmosdb_account.example.name
-#   database_name         = azurerm_cosmosdb_sql_database.example.name
-#   partition_key_path    = "/definition/id"
-#   partition_key_version = 1
-#   throughput            = 400
+resource "azurerm_cosmosdb_sql_container" "example" {
+  name                  = "cosmoscontainer-dev-lunch2-aztech-kc"
+  resource_group_name   = azurerm_cosmosdb_account.example.resource_group_name
+  account_name          = azurerm_cosmosdb_account.example.name
+  database_name         = azurerm_cosmosdb_sql_database.example.name
+  partition_key_path    = "/lunch_menu/id"
+  partition_key_version = 1
+  throughput            = 400
 
 #   indexing_policy {
 #     indexing_mode = "Consistent"
@@ -57,4 +57,4 @@ resource "azurerm_cosmosdb_sql_database" "cosmossql_dev_lunch2_aztech_kc" {
 #   unique_key {
 #     paths = ["/definition/idlong", "/definition/idshort"]
 #   }
-# }
+}
