@@ -25,7 +25,7 @@ resource "azurerm_cosmosdb_account" "cosmosdb_dev_lunch2_aztech_kc" {
 resource "azurerm_cosmosdb_sql_database" "cosmossql_dev_lunch2_aztech_kc" {
   name                = "cosmossql-dev-lunch2-aztech-kc"
   resource_group_name = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
-  account_name        = data.azurerm_cosmosdb_account.cosmosdb_dev_lunch2_aztech_kc.name
+  account_name        = azurerm_cosmosdb_account.cosmosdb_dev_lunch2_aztech_kc.name
   throughput          = 400
 }
 
