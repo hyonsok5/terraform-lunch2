@@ -31,9 +31,9 @@ resource "azurerm_cosmosdb_sql_database" "cosmossql_dev_lunch2_aztech_kc" {
 
 resource "azurerm_cosmosdb_sql_container" "example" {
   name                  = "cosmoscontainer-dev-lunch2-aztech-kc"
-  resource_group_name   = azurerm_cosmosdb_account.example.resource_group_name
-  account_name          = azurerm_cosmosdb_account.example.name
-  database_name         = azurerm_cosmosdb_sql_database.example.name
+  resource_group_name   = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+  account_name          = azurerm_cosmosdb_account.cosmosdb_dev_lunch2_aztech_kc.name
+  database_name         = azurerm_cosmosdb_sql_database.cosmossql_dev_lunch2_aztech_kc.name
   partition_key_path    = "/lunch_menu/id"
   partition_key_version = 1
   throughput            = 400
