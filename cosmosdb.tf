@@ -1,4 +1,4 @@
-resource "azurerm_cosmosdb_account" "db" {
+resource "azurerm_cosmosdb_account" "cosmosdb_dev_lunch2_aztech_kc" {
   name                = "cosmosdb-dev-lunch2-aztech-kc"
   location            = var.location
   resource_group_name = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
@@ -17,7 +17,7 @@ resource "azurerm_cosmosdb_account" "db" {
   }
 
   geo_location {
-    location          = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+    location          = var.location
     failover_priority = 0
   }
 }
