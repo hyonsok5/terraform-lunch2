@@ -54,7 +54,7 @@ resource "azurerm_cosmosdb_sql_container" "cosmoscontainer_dev_lunch2_aztech_kc"
 #     }
 #   }
 
-  unique_key {
-    paths = ["/lunch_menu/employee", "/lunch_menu/lunch_menu"]
-  }
+  # unique_key {
+  #   paths = ["/lunch_menu/employee", "/lunch_menu/lunch_menu"]
+  # }
 }
