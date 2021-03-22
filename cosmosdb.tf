@@ -54,7 +54,7 @@ resource "azurerm_cosmosdb_sql_container" "example" {
 #     }
 #   }
 
-#   unique_key {
-#     paths = ["/definition/idlong", "/definition/idshort"]
-#   }
+  unique_key {
+    paths = ["/definition/idlong", "/definition/idshort"]
+  }
 }
