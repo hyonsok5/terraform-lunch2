@@ -16,8 +16,7 @@ resource "azurerm_public_ip" "pip_dev_eslunch2_aztech_kc" {
   name                = "pip-dev-eslunch2-aztech-kc"
   resource_group_name      = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
   location                 = var.location
-  allocation_method   = "Static"
-  sku = "Standard"
+  allocation_method   = "Dynamic"
 }  
 
 resource "azurerm_network_interface" "nic_es_dev_lunch2_aztech_kc" {
