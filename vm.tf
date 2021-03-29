@@ -81,44 +81,11 @@ resource "azurerm_network_security_rule" "nsg_rule5601_es_dev_lunch2_aztech_kc" 
   network_security_group_name = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.name
 }
 
-
-# resource "azurerm_linux_virtual_machine" "vm_es_dev_lunch2_aztech_kc" {
-#   name                = "vm-es-dev-lunch2-aztech-kc"
-#   resource_group_name = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
-#   location            = var.location
-#   size                = "Standard_B2s"
-#   admin_username      = "adminuser"
-#   network_interface_ids = [
-#     azurerm_network_interface.nic_es_dev_lunch2_aztech_kc.id,
-#   ]
-
-#   admin_ssh_key {
-#     username   = "adminuser"
-#     public_key = file("~/.ssh/id_rsa.pub")
-#   }
-
-#   # os_profile {
-#   #   computer_name  = "vm-es-dev-lunch2-aztech-kc"
-#   #   admin_username = "testadmin"
-#   #   admin_password = "Password1234!"
-#   # }
-#   # os_profile_linux_config {
-#   #   disable_password_authentication = false
-#   # }
-
-#   os_disk {
-#     caching              = "ReadWrite"
-#     storage_account_type = "Standard_LRS"
-#   }
-
-#   source_image_reference {
-#     publisher = "Canonical"
-#     offer     = "UbuntuServer"
-#     sku       = "16.04-LTS"
-#     version   = "latest"
-#   }
-# }
-
+# Connect the security group to the network interface
+resource "azurerm_network_interface_security_group_association" "connection_nsg_nic_dev_lunch2_aztech_kc" {
+    network_interface_id      = azurerm_network_interface.nic_es_dev_lunch2_aztech_kc.id
+    network_security_group_id = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.id
+}
 
 
 resource "azurerm_virtual_machine" "vm_es_dev_lunch2_aztech_kc" {
