@@ -32,6 +32,54 @@ resource "azurerm_network_interface" "nic_es_dev_lunch2_aztech_kc" {
   }
 }
 
+# Create Network Security Group and rule
+resource "azurerm_network_security_group" "nsg_es_dev_lunch2_aztech_kc" {
+  name                = "nsg-es-dev-lunch2-aztech-kc"
+  location            = var.location
+  resource_group_name = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+}
+
+resource "azurerm_network_security_rule" "nsg_rule22_es_dev_lunch2_aztech_kc" {
+  name                        = "nsg-rule22-es-dev-lunch2-aztech-kc"
+  priority                    = 300
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "*"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "22"
+  resource_group_name         = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+  network_security_group_name = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.name
+}
+
+resource "azurerm_network_security_rule" "nsg_rule9200_es_dev_lunch2_aztech_kc" {
+  name                        = "nsg-rule9200-es-dev-lunch2-aztech-kc"
+  priority                    = 301
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "*"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "9200"
+  resource_group_name         = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+  network_security_group_name = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.name
+}
+
+resource "azurerm_network_security_rule" "nsg_rule5601_es_dev_lunch2_aztech_kc" {
+  name                        = "nsg-rule5601-es-dev-lunch2-aztech-kc"
+  priority                    = 302
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
+  destination_port_range      = "*"
+  source_address_prefix       = "*"
+  destination_address_prefix  = "5601"
+  resource_group_name         = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
+  network_security_group_name = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.name
+}
 
 
 # resource "azurerm_linux_virtual_machine" "vm_es_dev_lunch2_aztech_kc" {
