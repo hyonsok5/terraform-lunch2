@@ -46,9 +46,9 @@ resource "azurerm_network_security_rule" "nsg_rule22_es_dev_lunch2_aztech_kc" {
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "*"
+  destination_port_range      = "22"
   source_address_prefix       = "*"
-  destination_address_prefix  = "22"
+  destination_address_prefix  = "*"
   resource_group_name         = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
   network_security_group_name = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.name
 }
@@ -60,9 +60,9 @@ resource "azurerm_network_security_rule" "nsg_rule9200_es_dev_lunch2_aztech_kc" 
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "*"
+  destination_port_range      = "9200"
   source_address_prefix       = "*"
-  destination_address_prefix  = "9200"
+  destination_address_prefix  = "*"
   resource_group_name         = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
   network_security_group_name = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.name
 }
@@ -74,9 +74,9 @@ resource "azurerm_network_security_rule" "nsg_rule5601_es_dev_lunch2_aztech_kc" 
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_range      = "*"
+  destination_port_range      = "5601"
   source_address_prefix       = "*"
-  destination_address_prefix  = "5601"
+  destination_address_prefix  = "*"
   resource_group_name         = data.azurerm_resource_group.rg_dev_lunch2_aztech_kc.name
   network_security_group_name = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.name
 }
