@@ -15,7 +15,7 @@ resource "azurerm_cosmosdb_account" "cosmosdb_dev_lunch2_aztech_kc" {
     max_interval_in_seconds = 10
     max_staleness_prefix    = 200
   }
-
+   
   geo_location {
     location          = var.location
     failover_priority = 0
