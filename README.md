@@ -21,8 +21,6 @@
 <img src="https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/admin-lunch2.png" width=300 />
 <img src="https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/roulette.png" width=300 />
 
-<video controls width="250">
-
-    <source src="https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/VoD-Lunch2gather-Simulation-24MB.mp4"
-            type="video/webm">
+<video width="200" controls="controls">
+  <source src="https://github.com/hyonsok5/terraform-lunch2/blob/main/etc/VoD-Lunch2gather-Simulation-24MB.mp4" type="video/mp4">
 </video>
