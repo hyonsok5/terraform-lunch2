@@ -116,8 +116,8 @@ resource "azurerm_virtual_machine" "vm_es_dev_lunch2_aztech_kc" {
   os_profile {
     computer_name  = "vm-es-dev-lunch2-aztech-kc"
     admin_username = var.admin_username
-    admin_password = var.Password1234!
-  }
+    admin_password = var.admin_password
+  }    
   os_profile_linux_config {
     disable_password_authentication = false
   }
