@@ -86,7 +86,7 @@ resource "azurerm_network_interface_security_group_association" "connection_nsg_
     network_interface_id      = azurerm_network_interface.nic_es_dev_lunch2_aztech_kc.id
     network_security_group_id = azurerm_network_security_group.nsg_es_dev_lunch2_aztech_kc.id
 }
-
+  
 
 resource "azurerm_virtual_machine" "vm_es_dev_lunch2_aztech_kc" {
   name                  = "vm-es-dev-lunch2-aztech-kc"
@@ -115,11 +115,11 @@ resource "azurerm_virtual_machine" "vm_es_dev_lunch2_aztech_kc" {
   }
   os_profile {
     computer_name  = "vm-es-dev-lunch2-aztech-kc"
-    admin_username = "testadmin"
-    admin_password = "Password1234!"
+    admin_username = var.admin_username
+    admin_password = var.Password1234!
   }
   os_profile_linux_config {
     disable_password_authentication = false
   }
-
+  
 }
